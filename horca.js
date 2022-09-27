@@ -31,6 +31,9 @@ function comprobarLetra(key) {
 function anadirLetraIncorrecta() {
   errores -= 1;
   console.log(errores);
+  if (errores<0) {
+    juegoTerminado();
+  }
 }
 
 function iniciarJuego(){
@@ -54,4 +57,17 @@ function iniciarJuego(){
            escribirLetraIncorrecta(letra, errores)
           }
         }
+
+       
 }
+
+function reiniciarJuego() {
+  iniciarJuego()
+  errores=8;
+ 
+}
+
+function juegoTerminado() {
+  reiniciarJuego() 
+  alert("Tus 8 intentos fueron agotados")
+    }
